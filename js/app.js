@@ -157,6 +157,7 @@ function resultadoONo(resultado) {
 function mostrarResultados(resultadoBusqueda) {
         
     divPeliculas.innerHTML = ""
+    divPeliculas.setAttribute("class", "estiloPeliculas")
     tituloPagina.innerText = "Su búsqueda arrojó los siguientes resultados:"
     resultadoBusqueda.forEach((pelicula) => {
         let nuevaPelicula = document.createElement("div")
@@ -175,6 +176,7 @@ function mostrarResultados(resultadoBusqueda) {
 function mostrarListaCompleta() {
     tituloPagina.innerText = "Lista completa de películas"
     divPeliculas.innerHTML = ""
+    divPeliculas.setAttribute("class", "estiloPeliculas")
     filmoteca.forEach((pelicula) => {
         let nuevaPelicula = document.createElement("div")
         nuevaPelicula.innerHTML = `<article class="card">
@@ -208,6 +210,7 @@ function favoritasONo() {
 function mostrarFavoritas() {
     tituloPagina.innerText = "Lista de películas favoritas"
     divPeliculas.innerHTML = ""
+    divPeliculas.setAttribute("class", "estiloPeliculas")
     let favoritasParseadas = JSON.parse(localStorage.getItem("favoritas"))
     favoritasParseadas.forEach((pelicula) => {
         const {titulo, anio, director, afiche} = pelicula
